@@ -7,7 +7,7 @@ export class App extends React.Component
 		const body = 
 		(
 			<div> 
-				Hello World
+				Hello World!
 			</div> 
 		)
 
