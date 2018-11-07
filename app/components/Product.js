@@ -1,61 +1,67 @@
 import React from 'react';
 
-const container = 
-{
-    width: "22.5vw",
-    height: "45vh",
-    marginLeft: "1vw",
-    marginRight: "1vw",
-    border: "1px solid red",
-    display: "inline",
-    float: "left",
-    transition: 'all 300ms ease-in-out'
-};
-    const overlay = 
+
+// Styles for Product Component
+    const container = 
     {
-        position: "absolute",
-        opacity: "0.6",
-        margin: 0,
-        backgroundColor: "rgba(0,0,0,0.6)"
+        width: "22.5vw",
+        height: "45vh",
+        marginLeft: "1vw",
+        marginRight: "1vw",
+        border: "1px solid red",
+        display: "inline",
+        float: "left",
     };
-        const overlayBtn = 
+        const overlay = 
         {
+            position: "absolute",
+            margin: 0,
+            backgroundColor: "rgba(0,0,0,0.6)",
+        };
+            const overlayBtn = 
+            {
+                position: "absolute",
+                width: "100px",
+                height: "50px",
+                borderRadius: "5px",
+                top: "45%",
+                
+                left: 0,
+                right: 0,
+                margin: "auto"
+            }
 
-        }
-
-    const header = 
-    {
-        width: "100%",
-        height: "10%",
-        borderBottom: "1px solid red",
-        textAlign: "center",
-        border: "1px solid blue",
-        top: "50%"
-    };
-    const imgContainer = 
-    {
-        maxWidth: "100%",
-        maxHeight: "100%",
-        height: "50%",
-        display: "block",
-        margin: "auto"
-    };
-    const details = 
-    {
-        fontSize: "0.8em",
-        width: "100%",
-        bottom: 0,
-        border: "1px solid black",
-        textAlign: "center",
-        padding: "1vw"
-    };
-        const detailHead = 
+        const header = 
         {
-            width: "35%",
-        }
-
-
-
+            width: "100%",
+            height: "10%",
+            borderBottom: "1px solid red",
+            textAlign: "center",
+            border: "1px solid blue",
+        };
+        
+        const imgContainer = 
+        {
+            maxWidth: "100%",
+            maxHeight: "100%",
+            height: "50%",
+            display: "block",
+            margin: "auto"
+        };
+        const details = 
+        {
+            fontSize: "0.8em",
+            width: "100%",
+            marginTop: "1vh",
+            bottom: 0,
+            border: "1px solid black",
+            textAlign: "center",
+            padding: "1vw"
+        };
+            const detailHead = 
+            {
+                width: "35%",
+            }
 
 export class Product extends React.Component
 {
@@ -75,7 +81,13 @@ export class Product extends React.Component
     };
 
 
-
+    // Click Event Handler
+    handleClick()
+    {
+        this.setState({
+            selected: true
+        })
+    }
 
 
     // Hover Event Handlers
@@ -132,14 +144,17 @@ export class Product extends React.Component
                 style={container}>
 
 
-
                 {/* On hover, the overlay div is also rendered. */}
                 {
                     this.state.hovered &&
                     <div style={hoverStyle}> 
-                        <button></button>
+                        <button style={overlayBtn}
+                                onClick={this.handleClick}>
+                                 Compare 
+                        </button>
                     </div>
                 }
+
 
                 <h4 style={header}>{prodObj.name}</h4>
 
