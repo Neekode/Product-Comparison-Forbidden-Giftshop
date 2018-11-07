@@ -1,6 +1,5 @@
 import React from 'react';
 import {Product} from './Product.js';
-// import {Overlay} from './Overay.js';
 
 const prodsStyle = 
 {
@@ -13,16 +12,47 @@ const prodsStyle =
 
 export class Products extends React.Component
 {
+    constructor(props)
+    {
+        super(props);
+
+        this.state = 
+        {
+
+            clicked: false,
+            comparedProducts: []
+        };
+        
+        this.handleClick = this.handleClick.bind(this);
+    };
+
+    handleClick()
+    {
+        if (!this.state.clicked)
+        {
+            this.setState({
+                clicked: true
+            })
+        } 
+        else 
+        {
+            this.setState({
+                clicked: false
+            })
+        }
+        console.log(`${this.state.clicked} from parent`)
+    };
+   
 
 	render()
 	{
 		const products = 
 		(
             <div style={prodsStyle}>
-                <Product prod={this.props.products.chalice()} />
-                <Product prod={this.props.products.necro()}/>
-                <Product prod={this.props.products.ring()}/>
-                <Product prod={this.props.products.sword()}/>
+                <Product onClick={this.handleClick} prod={this.props.products.chalice()} />
+                <Product onClick={this.handleClick} prod={this.props.products.necro()}/>
+                <Product onClick={this.handleClick} prod={this.props.products.ring()}/>
+                <Product onClick={this.handleClick} prod={this.props.products.sword()}/>
             </div>
 		)
 

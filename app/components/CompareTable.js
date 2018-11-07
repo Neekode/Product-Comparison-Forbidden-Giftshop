@@ -1,9 +1,7 @@
 import React from 'react';
+import {CompareDetails} from './CompareDetails';
+import {CompareProd} from './CompareProd';
 
-const tableStyle = 
-{
-    
-};
 
 export class CompareTable extends React.Component
 {
@@ -11,8 +9,8 @@ export class CompareTable extends React.Component
 	{
 		const table = 
 		(
-            <div style={tableStyle}>
-                
+            <div>
+                <CompareDetails />
             </div>
 		)
 

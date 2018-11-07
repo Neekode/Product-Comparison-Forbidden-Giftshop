@@ -4,11 +4,13 @@ import React from 'react';
 // Styles for Product Component
     const container = 
     {
-        width: "22.5vw",
-        height: "45vh",
+        width: "22.7vw",
+        height: "40vh",
         marginLeft: "1vw",
         marginRight: "1vw",
-        border: "1px solid red",
+        marginTop: "-25px",
+        border: "1px solid grey",
+        borderRadius: "5px",
         display: "inline",
         float: "left",
     };
@@ -34,10 +36,9 @@ import React from 'react';
         const header = 
         {
             width: "100%",
-            height: "10%",
-            borderBottom: "1px solid red",
+            height: "5%",
+            marginTop: "10px",
             textAlign: "center",
-            border: "1px solid blue",
         };
         
         const imgContainer = 
@@ -54,13 +55,16 @@ import React from 'react';
             width: "100%",
             marginTop: "1vh",
             bottom: 0,
-            border: "1px solid black",
             textAlign: "center",
             padding: "1vw"
         };
-            const detailHead = 
+            const prodDesc = 
             {
-                width: "35%",
+                margin: "auto",
+                padding: "10px",
+                paddingTop: 0,
+                fontSize: "0.9em",
+                textAlign: "center"
             }
 
 export class Product extends React.Component
@@ -75,19 +79,16 @@ export class Product extends React.Component
             selected: false,
         }
 
-        // Binding Event handlers to this particular component instance
+        // Binding Hover Event handlers to this particular component instance
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
-		this.handleMouseLeave = this.handleMouseLeave.bind(this);
+        this.handleMouseLeave = this.handleMouseLeave.bind(this);
+
+        // Binding Click Handler
+        this.handleClick = this.handleClick.bind(this);
     };
 
 
-    // Click Event Handler
-    handleClick()
-    {
-        this.setState({
-            selected: true
-        })
-    }
+    
 
 
     // Hover Event Handlers
@@ -104,6 +105,32 @@ export class Product extends React.Component
         this.setState({
             hovered: false
         })
+    }
+
+
+    // Click Event Handler
+    handleClick(e)
+    {
+        if (!this.state.selected)
+        {
+            this.setState({
+                selected: true
+            })
+        } 
+        else 
+        {
+            this.setState({
+                selected: false
+            })
+        }
+
+
+        // By passing the state, which i changed through click handler down here, to the
+        // passed down prop: onClick function, i am able to change the state of the parent at
+        // the same time of changing the state of the child.
+        this.props.onClick(this.state.selected);
+
+        console.log(`from ${this.props.prod.name}`)
     }
 
 	render()
@@ -132,11 +159,24 @@ export class Product extends React.Component
             hoverStyle = Object.assign({}, container,overlay)
         }   
 
-            
+        let selectedStyle = container;
+        if (this.state.selected)
+        {
+            selectedStyle = Object.assign({}, container,overlay)
+        }
+
+        // Handling Click Event in Render for Button
+        // Checks current state to decide text for Comparison Button
+        let btnText = "Compare";
+        if (this.state.selected)
+        {
+            btnText = "Remove";
+        }
+
 
 		const product = 
 		(
-            <div 
+            <div
                 // Event Listeners
                 onMouseEnter={this.handleMouseEnter}
                 onMouseLeave={this.handleMouseLeave}
@@ -150,7 +190,18 @@ export class Product extends React.Component
                     <div style={hoverStyle}> 
                         <button style={overlayBtn}
                                 onClick={this.handleClick}>
-                                 Compare 
+                                 {btnText}
+                        </button>
+                    </div>
+                }
+
+                {/* Checks state to see if "selected" is true. Renders overlay if selected.*/}
+                {
+                    this.state.selected &&
+                    <div style={selectedStyle}> 
+                        <button style={overlayBtn}
+                                onClick={this.handleClick}>
+                                 {btnText}
                         </button>
                     </div>
                 }
@@ -162,13 +213,20 @@ export class Product extends React.Component
 
                 <table style={details}>
                     <tr>
-                        <td>${prodObj.price}</td>
-                        <td style={detailHead}>{currentStock}</td>
+                        <th>Price</th>
+                        <th>Availability</th>
+                        <th>Cursed Lvl</th>
                     </tr>
                     <tr>
-                        <td>{prodObj.description}</td>
+                        <td>${prodObj.price}</td>
+                        <td>{currentStock}</td>
+                        <td>{prodObj.cursedScale}/10</td>
                     </tr>
+                    
                 </table>
+                <div style={prodDesc}>
+                        {prodObj.description}
+                </div>
             </div>
 		)
 
