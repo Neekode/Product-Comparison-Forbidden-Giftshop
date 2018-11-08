@@ -18,7 +18,7 @@ Still need to work on understanding this pattern, but getting closer.
 
 */
 
-const prodsStyle = 
+const container = 
 {
     position: "relative",
     top: "15vh",
@@ -93,7 +93,7 @@ export class Products extends React.Component
 	{
 		const products = 
 		(
-            <div style={prodsStyle}>
+            <div style={container}>
                 <Product onClick={this.handleClick} prod={this.props.products.chalice()} />
                 <Product onClick={this.handleClick} prod={this.props.products.necro()}/>
                 <Product onClick={this.handleClick} prod={this.props.products.ring()}/>

@@ -1,30 +1,30 @@
 import React from 'react';
 
-const detailsStyle = 
+const container = 
 {
     position: "absolute",
     top: "55vh",
     marginLeft: "1vw",
-    border: "1px solid red",
-    
+    border: "1px solid grey",
+    borderRadius: "5px",
 }
-    const cellStyle = 
-    {
-        width: "23vw",
-        height: "12vh",
-        border: "1px solid purple",
-        textAlign: "center",
-        verticalAlign: "bottom",
-        position: "relative",
-        fontSize: "1.5em"
-    }
-    const nameCellStyle = 
+    const nameCell = 
     {
         height: "5vh",
         textAlign: "center",
-        border: "1px solid purple",
         fontSize: "1.3em"
     }
+    const cell = 
+    {
+        width: "23vw",
+        height: "12vh",
+        textAlign: "center",
+        verticalAlign: "bottom",
+        position: "relative",
+        fontSize: "1.5em",
+        borderTop: "1px solid grey",
+    }
+    
 
 export class CompareDetails extends React.Component
 {
@@ -32,11 +32,11 @@ export class CompareDetails extends React.Component
 	{
 		const compareDetails = 
 		(
-            <div style={detailsStyle}>
-                <div style={nameCellStyle}> Product: </div>
-                <div style={cellStyle}> Price: </div>
-                <div style={cellStyle}> Availability: </div>
-                <div style={cellStyle}> Cursed Level:  </div>
+            <div style={container}>
+                <div style={nameCell}> Product </div>
+                <div style={cell}> Price </div>
+                <div style={cell}> Availability </div>
+                <div style={cell}> Cursed Level  </div>
             </div>
 		)
 

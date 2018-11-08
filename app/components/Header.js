@@ -12,23 +12,27 @@ const container =
     position: "fixed",
     width: "100vw",
     height: "10vh",
+    border: "1px solid grey",
+    borderRadius:"5px"
 };
 
 const head = 
 {
-    border: "1px solid purple",
+    border: "1px solid grey",
+    borderRadius:"5px",
     width: "200px",
     height: "10vh",
 };
     const headTxt = 
     {
         fontSize: "1.6em",
-        margin: "2.5vw"
+        textAlign: "center"
     };
 
 const welcome = 
 {
-    border: "1px solid red",
+    border: "1px solid grey",
+    borderRadius:"5px",
     position: "fixed",
     width: "200px",
     height: "10vh",
