@@ -14,12 +14,13 @@ import React from 'react';
         display: "inline",
         float: "left",
     };
+
         const overlay = 
         {
             position: "absolute",
             margin: 0,
-            height: "30vh",
-            backgroundColor: "rgba(0,0,0,0.6)",
+            height: "20vh",
+            backgroundColor: "rgba(0,0,0,0.6)",    
         };
             
             const overlayBtn = 
@@ -213,9 +214,10 @@ export class Product extends React.Component
                     </div>       
                 }
 
-                <h4 style={header}>{prodObj.name}</h4>
+                
 
-                    <img style={imgContainer} src={prodObj.img} />
+                <img style={imgContainer} src={prodObj.img} />
+                <h4 style={header}>{prodObj.name}</h4>
 
                 <table style={details}>
                     <tr>
