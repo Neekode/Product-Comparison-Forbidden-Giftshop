@@ -49,10 +49,10 @@ export class Products extends React.Component
         // component's button is clicked, i can push individual
         // product objects to the comparedProducts array here.
 
-
+        
         // Declaration for new comparedProds array
         let newComparedProds = [];
-
+        
         // If the component has already been selected, it is
         // going to already be in the array. We must then look for it
         // to splice it out.

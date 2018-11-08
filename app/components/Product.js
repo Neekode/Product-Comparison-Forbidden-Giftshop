@@ -20,19 +20,20 @@ import React from 'react';
             margin: 0,
             backgroundColor: "rgba(0,0,0,0.6)",
         };
+            
             const overlayBtn = 
             {
                 position: "absolute",
                 width: "100px",
                 height: "50px",
                 borderRadius: "5px",
-                top: "45%",
+                top: "40%",
                 
                 left: 0,
                 right: 0,
                 margin: "auto"
-            }
-
+            };
+        
         const header = 
         {
             width: "100%",
@@ -157,17 +158,23 @@ export class Product extends React.Component
         // If the state of the 'hovered' property is changed to true, due to the 
         // event handlers + listeners, the hoverStyle css object is "added" together with the container style,
         // producing an overlay effect.
-        
         let hoverStyle = container;
+        let selectedStyle = container;
+
         if (this.state.hovered)
         {
             hoverStyle = Object.assign({}, container,overlay)
         }   
-
-        let selectedStyle = container;
+        
         if (this.state.selected)
         {
             selectedStyle = Object.assign({}, container,overlay)
+
+            if (this.state.hovered)
+            {
+                hoverStyle.backgroundColor = "none";
+                selectedStyle.backgroundColor = "none";
+            }
         }
 
         // Handling Click Event in Render for Button
@@ -188,29 +195,23 @@ export class Product extends React.Component
                 // Styling for Product Container
                 style={container}>
 
+                    {/* Checks if selected state is true, if so it renders full overlay*/}
+                {
+                    this.state.selected &&
+                    <div style={selectedStyle}> 
 
-                {/* On hover, the overlay div is also rendered. */}
+                    </div>
+                }
+
                 {
                     this.state.hovered &&
                     <div style={hoverStyle}> 
                         <button style={overlayBtn}
                                 onClick={this.handleClick}>
-                                 {btnText}
+                                {btnText}
                         </button>
-                    </div>
+                    </div>       
                 }
-
-                {/* Checks state to see if "selected" is true. Renders overlay if selected.*/}
-                {
-                    this.state.selected &&
-                    <div style={selectedStyle}> 
-                        <button style={overlayBtn}
-                                onClick={this.handleClick}>
-                                 {btnText}
-                        </button>
-                    </div>
-                }
-
 
                 <h4 style={header}>{prodObj.name}</h4>
 
