@@ -65,7 +65,7 @@ export class Products extends React.Component
                     newComparedProds = this.state.comparedProducts.splice(i,1);
                 }
             }
-            
+
             console.log(this.state.comparedProducts)
         }
         // If it isn't, we can safely add it to the array.
@@ -80,6 +80,12 @@ export class Products extends React.Component
 
             console.log(this.state.comparedProducts)
         }
+
+
+        // Finally, we can use this newly transformed comparedProducts array
+        // inside of this components state to transfer it upwards, into the top level.
+        // Where all children can access it.
+        this.props.onClick(this.state.comparedProducts);
     };
    
 

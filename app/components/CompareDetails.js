@@ -10,7 +10,7 @@ const detailsStyle =
 }
     const cellStyle = 
     {
-        width: "22.7vw",
+        width: "23vw",
         height: "12vh",
         border: "1px solid purple",
         textAlign: "center",
@@ -20,7 +20,7 @@ const detailsStyle =
     }
     const nameCellStyle = 
     {
-        height: "7vh",
+        height: "5vh",
         textAlign: "center",
         border: "1px solid purple",
         fontSize: "1.3em"
