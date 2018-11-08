@@ -18,17 +18,17 @@ import React from 'react';
         {
             position: "absolute",
             margin: 0,
+            height: "30vh",
             backgroundColor: "rgba(0,0,0,0.6)",
         };
             
             const overlayBtn = 
             {
                 position: "absolute",
-                width: "100px",
+                width: "100%",
                 height: "50px",
                 borderRadius: "5px",
-                top: "40%",
-                
+                bottom: 0,
                 left: 0,
                 right: 0,
                 margin: "auto"
