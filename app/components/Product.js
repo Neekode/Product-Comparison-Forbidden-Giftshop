@@ -111,6 +111,7 @@ export class Product extends React.Component
     // Click Event Handler
     handleClick(e)
     {
+        // Toggles "selected" state in this particular component instance
         if (!this.state.selected)
         {
             this.setState({
@@ -119,6 +120,7 @@ export class Product extends React.Component
         } 
         else 
         {
+            console.log("Already In Array");
             this.setState({
                 selected: false
             })
@@ -128,9 +130,12 @@ export class Product extends React.Component
         // By passing the state, which i changed through click handler down here, to the
         // passed down prop: onClick function, i am able to change the state of the parent at
         // the same time of changing the state of the child.
-        this.props.onClick(this.state.selected);
+        
+        const product = this.props.prod;
+        const prodSelected = this.state.selected;
+        this.props.onClick(product, prodSelected);
 
-        console.log(`from ${this.props.prod.name}`)
+        
     }
 
 	render()
