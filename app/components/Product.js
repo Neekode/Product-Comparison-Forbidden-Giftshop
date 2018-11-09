@@ -7,7 +7,7 @@ const container =
         height: "45vh",
         marginLeft: "1vw",
         marginRight: "1vw",
-        marginTop: "-25px",
+        marginTop: "-5vh",
         border: "1px solid #ddd",
         borderRadius: "5px",
         display: "inline",
@@ -129,6 +129,14 @@ export class Product extends React.Component
 
 
     // Click Event Handler
+        // Note: within the onClick event listener assigned in this component instance's 
+        // child button, an event object is automatically passed into the event handler.
+        // Here, i can take "e" as a parameter, and then play around with this event object.
+        // For example. within this current "e" object, it is passed from an onClick native 
+        // HTML element listener on a <button> element. When i reference e.target, it 
+        // referecences the current object which is being interacted with, namely, the 
+        // button element. I'm now wondering what other pieces of information this e event
+        // object
     handleClick(e)
     {
         // Toggles "selected" state in this particular component instance
@@ -152,7 +160,7 @@ export class Product extends React.Component
         
         const product = this.props.prod;
         const prodSelected = this.state.selected;
-        this.props.onClick(product, prodSelected);
+        this.props.onClick(product, prodSelected, e);
         
     }
 

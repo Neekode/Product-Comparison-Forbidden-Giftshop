@@ -2,12 +2,9 @@ export const headerSty =
 {
     container: 
     {
-        position: "fixed",
         width: "100vw",
         height: "10vh",
         borderRadius:"5px",
-        
-
     },
     
     head:
@@ -27,7 +24,6 @@ export const headerSty =
 
     welcome: 
     {
-        position: "fixed",
         width: "200px",
         height: "10vh",
         right: "25px",    

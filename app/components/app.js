@@ -17,19 +17,21 @@ export class App extends React.Component
 		this.state = 
 		{
 			tableProducts: [],	
+			currentEvent: ""
 		}
 
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 
-	handleClick(products)
+	handleClick(products, e)
 	{
 		// Then, this event handler at the top level is able to receive
 		// that newly transformed array into its state as well.
 
 		this.setState({
-			tableProducts: products
+			tableProducts: products,
+			currentEvent: e.target
 		})
 	}
 
@@ -43,7 +45,7 @@ export class App extends React.Component
 
 				<Products onClick={this.handleClick} products={theProducts}/>
 
-				<CompareTable compareProds={this.state.tableProducts}/>
+				<CompareTable currentEvent={this.state.currentEvent} compareProds={this.state.tableProducts}/>
 				
 				{/* Footer */}
 			</div> 

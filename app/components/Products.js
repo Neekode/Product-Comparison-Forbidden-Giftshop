@@ -25,6 +25,7 @@ const container =
     width: "100vw",
     marginLeft: "5vw",
     marginLeft: "5vw",
+    marginTop: "-10vh",
     padding: 0
 };
 
@@ -42,7 +43,7 @@ export class Products extends React.Component
         this.handleClick = this.handleClick.bind(this);
     };
 
-    handleClick(prodObj,selected)
+    handleClick(prodObj,selected,e)
     {
          // Now, since the argument is the Product Obj which 
         // was first passed down through props, but now being passed
@@ -86,7 +87,7 @@ export class Products extends React.Component
         // Finally, we can use this newly transformed comparedProducts array
         // inside of this components state to transfer it upwards, into the top level.
         // Where all children can access it.
-        this.props.onClick(this.state.comparedProducts);
+        this.props.onClick(this.state.comparedProducts, e);
     };
    
 
