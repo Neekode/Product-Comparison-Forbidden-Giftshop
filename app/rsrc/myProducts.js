@@ -8,7 +8,7 @@ export const theProducts =
 			name: "Chalice of Immortality",
 			price: 435.56,
 			cursedScale: 8,
-			description: "Drink one sip from this goblet and it's user will live forever. For a dark price.",
+			description: "Forbidden Cup",
 			stocked: true,
 			img: require("../img/chalice.jpg")
 		}
@@ -21,7 +21,7 @@ export const theProducts =
 			name: "The Necronomicon",
 			price: 1285.42,
 			cursedScale: 9,
-			description: "Spells from all ages. The tome gives it's user to control forces of death, but not their own.",
+			description: "Very Evil Book",
 			stocked: false,
 			img: require("../img/necro.jpg")
 		}
@@ -31,10 +31,10 @@ export const theProducts =
 	{
 		return {
 			id: 3,
-			name: "Ring of Chaos",
+			name: "The Ring of Chaos",
 			price: 6227.56,
 			cursedScale: 15,
-			description: "The wearer of this ring brings chaos to their entire universe. Extremely Dangerous.",
+			description: "Do Not Wear",
 			stocked: true,
 			img: require("../img/ring.jpg")
 		}
@@ -47,7 +47,7 @@ export const theProducts =
 			name: "Sword of Destruction",
 			price: 847.22,
 			cursedScale: 4,
-			description: "One swing of this blade can cut a mountain in half. They must have a very high willpower to use.",
+			description: "Warning: Sharp",
 			stocked: true,
 			img: require("../img/sword.jpg")
 		}

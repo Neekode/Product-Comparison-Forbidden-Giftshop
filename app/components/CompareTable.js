@@ -9,6 +9,7 @@ const container =
 	left: "26vw",
 	top: "55vh",
 	width: "72.5vw",
+	border: "1px solid blue"
 }
 
 

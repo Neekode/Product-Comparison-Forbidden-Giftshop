@@ -1,72 +1,86 @@
 import React from 'react';
 
-
 // Styles for Product Component
-    const container = 
+const container = 
     {
-        width: "22.7vw",
-        height: "40vh",
+        width: "20vw",
+        height: "45vh",
         marginLeft: "1vw",
         marginRight: "1vw",
         marginTop: "-25px",
-        border: "1px solid grey",
+        border: "1px solid #ddd",
         borderRadius: "5px",
         display: "inline",
         float: "left",
-    };
+    };        
+        
+
 
         const overlay = 
         {
             position: "absolute",
             margin: 0,
-            height: "20vh",
-            backgroundColor: "rgba(0,0,0,0.6)",    
+            height: "30vh",
+            border: "none",
+            borderRadius: "5px 5px 0 0",
+            backgroundColor: "rgba(24,181,141,0.8)",    
         };
             
             const overlayBtn = 
             {
                 position: "absolute",
-                width: "100%",
+                width: "50%",
                 height: "50px",
-                borderRadius: "5px",
-                bottom: 0,
+                border: "2px solid white",
+                backgroundColor: "transparent",
+                color: "white",
+                top: "45%",
                 left: 0,
                 right: 0,
-                margin: "auto"
+                margin: "auto",
             };
         
         const header = 
         {
             width: "100%",
             height: "5%",
-            marginTop: "10px",
-            textAlign: "center",
+            marginTop: "15px",
+            fontSize: "1.2em",
+            textAlign: "left",
+            fontWeight: "bold"
+        };
+        const price = 
+        {
+            width: "100%",
+            height: "5%",
+            marginTop: "15px",
+            fontSize: "1.1em",
+            textAlign: "left",
+            fontWeight: 600,
+            color: "#48cfad",
+            verticalAlign: "top"
+            
         };
         
         const imgContainer = 
         {
-            maxWidth: "100%",
-            maxHeight: "100%",
-            height: "50%",
+            maxWidth: "85%",
+            maxHeight: "85%",
+            padding: "5%",
+            height: "60%",
             display: "block",
             margin: "auto"
         };
+        
         const details = 
         {
-            fontSize: "0.8em",
             width: "100%",
-            marginTop: "1vh",
-            bottom: 0,
-            textAlign: "center",
             padding: "1vw"
         };
             const prodDesc = 
             {
-                margin: "auto",
-                padding: "10px",
-                paddingTop: 0,
-                fontSize: "0.9em",
-                textAlign: "center"
+                textAlign: "left",
+                fontSize: "1em"
             }
 
 export class Product extends React.Component
@@ -79,6 +93,7 @@ export class Product extends React.Component
         {
             hovered: false,
             selected: false,
+
         }
 
         // Binding Hover Event handlers to this particular component instance
@@ -97,9 +112,11 @@ export class Product extends React.Component
         // Changes CSS styling to include fade effect
     handleMouseEnter()
     {
+
         this.setState({
             hovered: true
         })
+
     }
 
     handleMouseLeave()
@@ -107,6 +124,7 @@ export class Product extends React.Component
         this.setState({
             hovered: false
         })
+
     }
 
 
@@ -128,7 +146,6 @@ export class Product extends React.Component
             })
         }
 
-
         // By passing the state, which i changed through click handler down here, to the
         // passed down prop: onClick function, i am able to change the state of the parent at
         // the same time of changing the state of the child.
@@ -136,7 +153,6 @@ export class Product extends React.Component
         const product = this.props.prod;
         const prodSelected = this.state.selected;
         this.props.onClick(product, prodSelected);
-
         
     }
 
@@ -164,7 +180,9 @@ export class Product extends React.Component
 
         if (this.state.hovered)
         {
-            hoverStyle = Object.assign({}, container,overlay)
+            hoverStyle = Object.assign({}, container,overlay);
+
+            
         }   
         
         if (this.state.selected)
@@ -217,24 +235,18 @@ export class Product extends React.Component
                 
 
                 <img style={imgContainer} src={prodObj.img} />
-                <h4 style={header}>{prodObj.name}</h4>
+                
 
                 <table style={details}>
                     <tr>
-                        <th>Price</th>
-                        <th>Availability</th>
-                        <th>Cursed Lvl</th>
+                        <td style={header}>{prodObj.name}</td>
+                        <td style={price}>${prodObj.price}</td>
                     </tr>
                     <tr>
-                        <td>${prodObj.price}</td>
-                        <td>{currentStock}</td>
-                        <td>{prodObj.cursedScale}/10</td>
+                        <td style={prodDesc}>{prodObj.description}</td>
+                        <td></td>
                     </tr>
-                    
                 </table>
-                <div style={prodDesc}>
-                        {prodObj.description}
-                </div>
             </div>
 		)
 

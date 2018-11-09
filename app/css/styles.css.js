@@ -5,21 +5,24 @@ export const headerSty =
         position: "fixed",
         width: "100vw",
         height: "10vh",
-        border: "1px solid grey",
-        borderRadius:"5px"
+        borderRadius:"5px",
+        
+
     },
     
     head:
     {
+        position: "absolute",
+        top: "1.5vh",
         borderRadius:"5px",
         width: "400px",
-        height: "10vh",
+        marginLeft: "6vw",
     },
 
     headTxt: 
     {
         fontSize: "1.6em",
-        textAlign: "center"
+        textAlign: "left"
     },
 
     welcome: 
