@@ -36,7 +36,7 @@ export class CompareTable extends React.Component
 
 	setWidth()
 	{
-		let newWidth = `${(100 / (this.props.compareProds.length + 2)) - 2}%`
+		let newWidth = `${(100 / (this.props.compareProds.length + 2) - 0.5)}%`
 
 		this.setState({
 			containerWidth : newWidth
@@ -54,19 +54,17 @@ export class CompareTable extends React.Component
 			this.setWidth();
 		}
 
+		const newWidth = this.state.containerWidth;
 
 		const table = 
 		(
-			
-
             <div style={outsideCont}>
 				{
+
 					this.props.compareProds.length > 1 &&
 
-					
-
 					<div style={container}> 
-					<CompareDetails width={this.state.containerWidth}/>
+					<CompareDetails width={newWidth}/>
 						{
 							/* Because I have the array of Compared Projects dynamically changing 
 								with each new render() call, each time render is called, the array
@@ -74,7 +72,7 @@ export class CompareTable extends React.Component
 							*/
 							this.props.compareProds.map((prodObjAtIndex) => 
 							{
-								return <CompareProd width={this.state.containerWidth} product={prodObjAtIndex} />
+								return <CompareProd width={newWidth} product={prodObjAtIndex} />
 							})
 						}
 					</div>

@@ -2,23 +2,24 @@ import React from 'react';
 
 const container = 
 {
+    position: "relative",
     margin: "auto",
     display: "block",
     float: "left",
     textAlign: "center",
     border: "1px solid grey",
-    borderRadius: "5px",
+    fontSize: "1.3em"
 }
     const name = 
     {   height: "5vh",
         textAlign: "center",
-        fontSize: "1.3em"
+        border: "1px solid grey",
     }
     const cell = 
     {
         height: "12vh",
         textAlign: "center",
-        fontSize: "1.5em",
+        border: "1px solid grey",
     }
     
 
