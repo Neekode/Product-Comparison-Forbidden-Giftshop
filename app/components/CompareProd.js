@@ -7,19 +7,20 @@ const container =
     display: "block",
     float: "left",
     textAlign: "center",
-    border: "1px solid grey",
+    border: "1px solid #ddd",
+	borderRadius: "5px ",
     fontSize: "1.3em"
 }
     const name = 
     {   height: "5vh",
         textAlign: "center",
-        border: "1px solid grey",
+        borderBottom: "1px solid grey",
+        margin: "auto"
     }
     const cell = 
     {
         height: "12vh",
         textAlign: "center",
-        border: "1px solid grey",
     }
     
 

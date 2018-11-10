@@ -11,13 +11,13 @@ const container =
 {
 	position: "absolute",
 	margin: "auto",	
-	marginLeft: "6vw",
-	marginRight: "6vw",
+	marginLeft: "11vw",
+	marginRight: "11vw",
 	top: "60vh",
 	display: "block",
 	float: "left",
-	border: "1px solid red",
 	width: "87vw",
+	
 }
 
 

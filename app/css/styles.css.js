@@ -13,7 +13,7 @@ export const headerSty =
         top: "1.5vh",
         borderRadius:"5px",
         width: "400px",
-        marginLeft: "6vw",
+        marginLeft: "11vw",
     },
 
     headTxt: 
