@@ -4,24 +4,24 @@ const container =
 {
     position: "relative",
     margin: "auto",
+    border: "1px solid grey",
     display: "block",
     float: "left",
-    fontSize: "1.3em",
-    border: "1px solid #ddd",
-	borderRadius: "5px "
+    fontSize: "1.3em"
 }
 
     const name = 
     {
         height: "5vh",
         textAlign: "center",
-        borderBottom: "1px solid grey"
+        border: "1px solid grey",
     }
     const cell = 
     {
         height: "12vh",
         textAlign: "center",
-        borderBottom: "1px solid #ddd"
+        border: "1px solid grey",
+
     }
     
 

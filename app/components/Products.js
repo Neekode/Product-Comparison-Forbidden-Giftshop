@@ -23,8 +23,8 @@ const container =
     position: "relative",
     top: "15vh",
     width: "100vw",
-    marginLeft: "10vw",
-    marginRight: "10vw",
+    marginLeft: "5vw",
+    marginRight: "5vw",
     marginTop: "-10vh",
     padding: 0
 };
